@@ -1,0 +1,15 @@
+{% extends "myApp/base.html" %}
+{% load static %}
+{% block contenido %}
+
+<main class='contenedor-formulario'>
+    <h1>Nuestros Servicios</h1>
+    <ul>
+        {% for i in servi %}
+        <h5>----------------------------------------------------</h5> 
+        <h4>{{ i.tipo_de_servicio }}</h4>
+        {% endfor %}    
+        <h5>----------------------------------------------------</h5> 
+    </ul>
+</main> 
+{% endblock contenido %}

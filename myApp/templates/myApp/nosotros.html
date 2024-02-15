@@ -1,0 +1,16 @@
+{% extends "myApp/base.html" %}
+{% load static %}
+{% block contenido %}
+
+<main class= "contenedor-formulario">
+    <h1>Equipo De Trabajo</h1>
+    <ul>
+        {% for i in equipo %}
+        <h5>----------------------------------------------------</h5> 
+        <h4>{{ i.nombre }} </h4> 
+        <p>{{i.especialidad}}</p>
+        {% endfor %}    
+        <h5>----------------------------------------------------</h5> 
+    </ul>
+</main> 
+{% endblock contenido %}

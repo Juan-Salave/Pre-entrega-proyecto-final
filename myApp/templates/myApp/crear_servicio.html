@@ -1,0 +1,25 @@
+{% extends "myApp/base.html" %}
+{% load static %}
+{% block contenido %}
+
+<section>
+    <h2>Cargar Servicio</h2>
+    
+    <form method="POST" class='contenedor-formulario'> {% csrf_token %}
+        <fieldset>
+            <legend>llene El Campos Del Nuevo Servicio</legend>
+            <div class= "contenedor-campos">
+                <div class="campo input-text">
+                    {{form}}
+                </div>
+            </div>      <!-- class = contenedor-campos -->
+        
+            <div class= "alinear-derecha flex">
+                    <input class= "boton" type="submit" value="Cargar">
+            </div>
+           
+        </fieldset>
+    </form>   
+
+</section>
+{% endblock contenido %}

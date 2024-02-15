@@ -1,0 +1,32 @@
+{% extends "myApp/base.html" %}
+{% load static %}
+{% block contenido %}
+{% csrf_token %}
+
+    <h1>Buscar Clientes</h1>
+    <h2>Ingrese la Patente</h2>
+<Main class='contenedor-formulario'>
+    <form method="POST">   {% csrf_token %}
+
+        <table>
+            {{ formu.as_table }}
+        </table>
+        
+        <div class= "alinear-derecha flex">
+            <input class= "boton" type="submit" value="BUSCAR">
+        </div>
+    </form>
+
+    <ul class= 'busqueda'>
+        {% for i in client%}
+        <h5>----------------------------------------------------</h5>
+            <p>Nombre : {{i.nombre}}</p>
+            <p>Modelo : {{i.modelo_auto}}</p>
+            <p>Patente : {{i.patente}}</p>
+            {% endfor %}
+        <h5>----------------------------------------------------</h5>
+    </ul>
+
+</Main>
+
+{% endblock contenido %}

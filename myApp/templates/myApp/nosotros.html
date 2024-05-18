@@ -2,15 +2,15 @@
 {% load static %}
 {% block contenido %}
 
-<main class= "contenedor-formulario">
     <h1>Equipo De Trabajo</h1>
-    <ul>
+    <br>
         {% for i in equipo %}
-        <h5>----------------------------------------------------</h5> 
-        <h4>{{ i.nombre }} </h4> 
-        <p>{{i.especialidad}}</p>
+        <div class="container col-3"> 
+            <div class="alert alert-primary" role="alert">
+                <h2> Nombre: {{ i.nombre }} </h2> 
+                <h3> Categoria: {{i.especialidad}}</h3>
+            </div>
+        </div>
         {% endfor %}    
-        <h5>----------------------------------------------------</h5> 
-    </ul>
-</main> 
+        
 {% endblock contenido %}

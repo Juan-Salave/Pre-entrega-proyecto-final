@@ -2,14 +2,19 @@
 {% load static %}
 {% block contenido %}
 
-<main class='contenedor-formulario'>
+    <br>
     <h1>Nuestros Servicios</h1>
-    <ul>
-        {% for i in servi %}
-        <h5>----------------------------------------------------</h5> 
-        <h4>{{ i.tipo_de_servicio }}</h4>
-        {% endfor %}    
-        <h5>----------------------------------------------------</h5> 
-    </ul>
-</main> 
+    <br>
+
+    
+    {% for i in servi %}
+    <div class="container col-3">
+
+        <div class="alert alert-primary" role="alert">
+        <h3 >{{ i.tipo_de_servicio }}</h3>
+        </div>
+
+    </div>
+    {% endfor %}    
+    
 {% endblock contenido %}

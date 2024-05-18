@@ -4,29 +4,32 @@
 {% csrf_token %}
 
     <h1>Buscar Clientes</h1>
-    <h2>Ingrese la Patente</h2>
-<Main class='contenedor-formulario'>
-    <form method="POST">   {% csrf_token %}
+    <br>
 
-        <table>
+    <form class="container col-1 " method="POST" >   {% csrf_token %}
+
+        <table class="alert alert-primary" role="alert">
             {{ formu.as_table }}
         </table>
-        
         <div class= "alinear-derecha flex">
-            <input class= "boton" type="submit" value="BUSCAR">
+            <input class="btn btn-primary form-control" type="submit" value="BUSCAR">
         </div>
+        
     </form>
 
-    <ul class= 'busqueda'>
+    
         {% for i in client%}
-        <h5>----------------------------------------------------</h5>
-            <p>Nombre : {{i.nombre}}</p>
-            <p>Modelo : {{i.modelo_auto}}</p>
-            <p>Patente : {{i.patente}}</p>
-            {% endfor %}
-        <h5>----------------------------------------------------</h5>
-    </ul>
+        <div class="container col-3">
+            <div class="alert alert-primary" role="alert">
+        
+                <h2>Nombre : {{i.nombre}}</h2>
+                <h2>Modelo : {{i.modelo_auto}}</h2>
+                <h2>Patente : {{i.patente}}</h2>
 
-</Main>
+            </div>
+        </div>
+
+        {% endfor %}
+    
 
 {% endblock contenido %}
